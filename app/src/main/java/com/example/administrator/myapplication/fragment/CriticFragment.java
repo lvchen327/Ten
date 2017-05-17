@@ -3,7 +3,6 @@ package com.example.administrator.myapplication.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,7 +30,6 @@ public class CriticFragment extends BaseFragment implements ViewPager.OnPageChan
     @BindView(R.id.critic_pager)
     ViewPager mPager;
     private CallBackValue callBackValue;
-    private int id;
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_critic;
@@ -42,7 +40,7 @@ public class CriticFragment extends BaseFragment implements ViewPager.OnPageChan
         // TODO: inflate a fragment view
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
         ButterKnife.bind(this, rootView);
-        setupView(0);
+        setupView();
         /**
          * 滑动监听器OnPageChangeListener
          *  OnPageChangeListener这个接口需要实现三个方法：onPageScrollStateChanged，onPageScrolled ，onPageSelected
@@ -58,7 +56,7 @@ public class CriticFragment extends BaseFragment implements ViewPager.OnPageChan
          *      3、onPageSelected(int arg0) 此方法是页面跳转完后被调用，arg0是你当前选中的页面的Position（位置编号）
          */
         mPager.addOnPageChangeListener(this);
-        mPager.setAdapter(new CriticFragmentPager(getChildFragmentManager(),id));
+
         return rootView;
     }
 
@@ -72,8 +70,6 @@ public class CriticFragment extends BaseFragment implements ViewPager.OnPageChan
     public void onPageSelected(int position) {
         //传值
         callBackValue.SendMessageValue(position);
-        setupView(position-1);
-        Log.e(TAG, "onPageSelected: "+id );
     }
 
     @Override
@@ -90,21 +86,17 @@ public class CriticFragment extends BaseFragment implements ViewPager.OnPageChan
         public void SendMessageValue(int intValue);
     }
 
-    public void setupView(final int position){
+    public void setupView(){
         ApiService apiService = ApiClient.getApiService();
         Call<CriticBean> criticBean = apiService.getCriticBean();
         criticBean.enqueue(new Callback<CriticBean>() {
-
-
             @Override
             public void onResponse(Call<CriticBean> call, Response<CriticBean> response) {
                 List<CriticBean.CriticListBean> result = response.body().getResult();
-                id = result.get(position).getId();
+                mPager.setAdapter(new CriticFragmentPager(getChildFragmentManager(),result));
             }
-
             @Override
             public void onFailure(Call<CriticBean> call, Throwable t) {
-
             }
         });
     }
