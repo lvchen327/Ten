@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="feedback">加微信或QQ反馈问题，我们会第一时间为你解决。</string>
 </resources>

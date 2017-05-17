@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feedback"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.administrator.myapplication.activity.FeedbackActivity">
+    <TextView
+        android:id="@+id/feedback_back"
+        style="@style/settingTitle"
+        android:text="意见反馈"/>
+    <TextView
+        android:layout_marginTop="50dp"
+        android:textSize="14sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/feedback"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/feedback_weixin"
+        android:text="微信公众账号: shigeten"
+        android:layout_marginLeft="100dp"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="100dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/feedback_qq"
+        android:text="QQ号: 551608331"
+        android:layout_marginLeft="100dp"
+        android:drawablePadding="5dp"
+        android:layout_marginTop="50dp"/>
+
+</LinearLayout>

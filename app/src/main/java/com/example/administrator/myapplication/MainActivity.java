@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.RadioButton;
@@ -13,6 +14,7 @@ import android.widget.RadioGroup;
 import com.example.administrator.myapplication.fragment.CriticFragment;
 import com.example.administrator.myapplication.fragment.DiagramFragment;
 import com.example.administrator.myapplication.fragment.NovelFragment;
+import com.example.administrator.myapplication.fragment.PersonalFragment;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -55,27 +57,6 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
         mCritic.setChecked(true);
 
     }
-
-//    @OnClick({R.id.main_critic, R.id.main_novel, R.id.main_diagram, R.id.main_personal})
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.main_critic:
-//                mLogo.setImageResource(R.mipmap.logo_critic);
-//                switchPage(CriticFragment.TAG);
-//                break;
-//            case R.id.main_novel:
-//                mLogo.setImageResource(R.mipmap.logo_novel);
-//                switchPage(NovelFragment.TAG);
-//                break;
-//            case R.id.main_diagram:
-//                mLogo.setImageResource(R.mipmap.logo_diagram);
-//                switchPage(DiagramFragment.TAG);
-//                break;
-//            case R.id.main_personal:
-//                break;
-//        }
-//    }
-
     //页面 切换
     private void switchPage(String tag) {
         FragmentManager fm = getSupportFragmentManager();
@@ -109,19 +90,30 @@ public class MainActivity extends AppCompatActivity implements RadioGroup.OnChec
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.main_critic:
+                titleShow();
                 mLogo.setImageResource(R.mipmap.logo_critic);
                 switchPage(CriticFragment.TAG);
                 break;
             case R.id.main_novel:
+                titleShow();
                 mLogo.setImageResource(R.mipmap.logo_novel);
                 switchPage(NovelFragment.TAG);
                 break;
             case R.id.main_diagram:
+                titleShow();
                 mLogo.setImageResource(R.mipmap.logo_diagram);
                 switchPage(DiagramFragment.TAG);
                 break;
             case R.id.main_personal:
+                switchPage(PersonalFragment.TAG);
+                mTitle.setVisibility(View.GONE);
                 break;
+        }
+    }
+
+    private void titleShow() {
+        if (mTitle.getVisibility()== View.GONE) {
+            mTitle.setVisibility(View.VISIBLE);
         }
     }
 }
