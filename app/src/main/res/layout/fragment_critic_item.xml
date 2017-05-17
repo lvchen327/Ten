@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:paddingTop="50dp"
+              android:paddingBottom="50dp"
+              android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:padding="10dp"
+                android:textSize="24sp"
+                android:text="《地下》库斯图里卡的长篇史诗小说"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="作者:啊大姐啊大海"/>
+            <TextView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="自由的前奏永远是一部辛酸史，而由其酿制的“琼浆玉露”亦永远都是过了期的“凤梨罐头”。《地下》全片洋溢着最潇洒的吉普赛之光，那是藏匿真相的永恒的福地。——陸支羽\r\n\r\n在得遇《地下》之前，我印象中最好的“史诗电影”是安哲·罗普洛斯的《流浪艺人》。或许，在其他人眼里，《乱世佳人》抑或《美国往事》更具史诗特质也说不定。倘若某天我患上了鲁迅先生的“十景病”，大概也会像那些热衷于分门别类的同学们一样，搬出十部印象最深的史诗电影来显摆一下的。但无论如何，我到底是被《地下》给吓住了。或而就像许多人说的，这是库斯图里卡的野心之作。亲眼目睹了那份浩大的关于地下都市的惶恐之后，我的心兀自觉得狂热而寒冷，一种细小而强大的南斯拉夫式的异乡情感侵袭了我。这种情感里有一种濒危的珍贵，再也无法肆无忌惮地说出口。那个炮火之乡，小心翼翼地被折叠在许多人的上衣口袋里，唯有在梦中才敢悄悄掏出来窥看。"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="111111"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="222222"/>
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
